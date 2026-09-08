@@ -1,4 +1,4 @@
-﻿Write-Host "Đang cài đặt Hệ Thống Báo Cáo Sức Khỏe Tự Động..." -ForegroundColor Cyan
+Write-Host "Đang cài đặt Hệ Thống Báo Cáo Sức Khỏe Tự Động..." -ForegroundColor Cyan
 
 $sourcePs1 = "$PSScriptRoot\AutoSystemCheck.ps1"
 $docPs1 = "$env:USERPROFILE\Documents\AutoSystemCheck.ps1"
@@ -11,7 +11,7 @@ Copy-Item -Path $sourcePs1 -Destination $docPs1 -Force
 $vbsContent = "Set objShell = CreateObject(""WScript.Shell"")
 objShell.Run ""powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File """$docPs1""""", 0, False"
 
-Set-Content -Path $vbsPath -Value $vbsContent -Encoding UTF8
+Set-Content -Path $vbsPath -Value $vbsContent -Encoding Ascii
 
 Write-Host "Cài đặt THÀNH CÔNG! ✅" -ForegroundColor Green
 Write-Host "Máy tính của bạn sẽ tự động dọn rác và hiển thị báo cáo vào mỗi lần khởi động." -ForegroundColor Yellow

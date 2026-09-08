@@ -1,4 +1,4 @@
-﻿# 🚀 Cross-Platform Auto Health Check & Cleaner
+# 🚀 Cross-Platform Auto Health Check & Cleaner
 
 Một công cụ tự động siêu nhẹ dành cho **Windows** và **macOS**. Công cụ này sẽ tự động **dọn dẹp rác** và **hiển thị một bản Báo Cáo Sức Khỏe chi tiết (HTML)** mỗi khi bạn bật máy tính lên. 
 
@@ -24,3 +24,6 @@ Một công cụ tự động siêu nhẹ dành cho **Windows** và **macOS**. C
 5. **Xong!** 🎉 Hệ thống sẽ thêm một LaunchAgent để tự chạy báo cáo mỗi khi bạn đăng nhập vào Mac.
 
 *(Gỡ cài đặt Mac: Mở Terminal gõ launchctl unload ~/Library/LaunchAgents/com.user.autohealthcheck.plist, sau đó xóa file .plist đó và xóa ~/Documents/AutoSystemCheck_macOS.sh)*
+
+## 📜 Giấy phép
+Mã nguồn mở, chia sẻ miễn phí cho cộng đồng!

@@ -1,4 +1,4 @@
-﻿# Đợi máy tính khởi động ổn định
+# Đợi máy tính khởi động ổn định
 Start-Sleep -Seconds 15
 
 # 1. Dọn rác

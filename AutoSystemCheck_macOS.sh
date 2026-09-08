@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 # Đợi 15 giây sau khi Mac khởi động
 sleep 15
 

@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 echo "Đang cài đặt Hệ Thống Báo Cáo Sức Khỏe Tự Động cho Mac..."
 
 SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd)
