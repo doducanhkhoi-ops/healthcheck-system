@@ -3,7 +3,7 @@ Start-Sleep -Seconds 15
 
 # 1. Dọn rác
 Clear-RecycleBin -Force -ErrorAction SilentlyContinue
-Remove-Item -Path "C:\Users\ASUS\AppData\Local\Temp\*" -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item -Path "$env:TEMP\*" -Recurse -Force -ErrorAction SilentlyContinue
 
 # 2. Thu thập dữ liệu
 $cpu = Get-CimInstance Win32_Processor
@@ -28,11 +28,11 @@ try {
 }
 
 # 5. Kiểm tra file bất thường (Downloads lớn hơn 1GB)
-$largeDownloads = Get-ChildItem -Path "C:\Users\ASUS\Downloads" -Recurse -File -ErrorAction SilentlyContinue | Where-Object Length -gt 1GB
+$largeDownloads = Get-ChildItem -Path "$env:USERPROFILE\Downloads" -Recurse -File -ErrorAction SilentlyContinue | Where-Object Length -gt 1GB
 $downloadAlert = if ($largeDownloads) { "<span class='warn'>Phát hiện $($largeDownloads.Count) file dung lượng cực lớn trong thư mục Downloads. Bạn nên kiểm tra và xóa nếu không cần!</span>" } else { "Không có file rác lớn bất thường trong Downloads." }
 
 # 6. Tạo HTML
-$htmlPath = "C:\Users\ASUS\Documents\Bao_Cao_He_Thong.html"
+$htmlPath = "$env:USERPROFILE\Documents\Bao_Cao_He_Thong.html"
 $date = Get-Date -Format "dd/MM/yyyy HH:mm"
 
 $html = "
@@ -109,6 +109,7 @@ $html += "
 </div>
 </body>
 </html>
+"
 
-
+$html | Set-Content -Path $htmlPath -Encoding UTF8
 Start-Process "$htmlPath"
