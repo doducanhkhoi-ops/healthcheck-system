@@ -1,4 +1,4 @@
-Write-Host "Đang cài đặt Hệ Thống Báo Cáo Sức Khỏe Tự Động..." -ForegroundColor Cyan
+﻿Write-Host "Đang cài đặt Hệ Thống Báo Cáo Sức Khỏe Tự Động..." -ForegroundColor Cyan
 
 $sourcePs1 = "$PSScriptRoot\AutoSystemCheck.ps1"
 $docPs1 = "$env:USERPROFILE\Documents\AutoSystemCheck.ps1"
@@ -8,8 +8,11 @@ $vbsPath = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\AutoSyste
 Copy-Item -Path $sourcePs1 -Destination $docPs1 -Force
 
 # Tạo file chạy ngầm (.vbs) trong thư mục Startup
-$vbsContent = "Set objShell = CreateObject(""WScript.Shell"")
-objShell.Run ""powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File """$docPs1""""", 0, False"
+$vbsContent = @'
+Set objShell = CreateObject("WScript.Shell")
+objShell.Run "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File ""{0}""", 0, False
+'@ -f $docPs1
+
 
 Set-Content -Path $vbsPath -Value $vbsContent -Encoding Ascii
 

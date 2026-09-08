@@ -1,4 +1,4 @@
-# Đợi máy tính khởi động ổn định
+﻿# Đợi máy tính khởi động ổn định
 Start-Sleep -Seconds 15
 
 # 1. Dọn rác
@@ -88,7 +88,7 @@ $html += "
         <p><b>Quét File Lạ:</b> $downloadAlert</p>
     </div>
 
-    <h2>4. Phân Tích Hiện Tượng "Ngốn" Tài Nguyên</h2>
+    <h2>4. Phân Tích Hiện Tượng 'Ngốn' Tài Nguyên</h2>
     <div class='card'>
         <p><b>Phần mềm chiếm nhiều RAM nhất hiện tại:</b> $($topRam[0].Name) ($([math]::Round($topRam[0].WorkingSet / 1MB, 2)) MB), $($topRam[1].Name) ($([math]::Round($topRam[1].WorkingSet / 1MB, 2)) MB)</p>
         <p><b>Phần mềm làm CPU hoạt động nhiều nhất:</b> $($topCpu[0].Name), $($topCpu[1].Name)</p>
