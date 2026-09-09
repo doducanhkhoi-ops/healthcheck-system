@@ -1,0 +1,13 @@
+# Reports and temporary files
+Bao_Cao_*.html
+*.log
+*.tmp
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
